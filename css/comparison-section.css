@@ -1,0 +1,227 @@
+/* Comparison Section */
+.comparison-section {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, #f9fafb 0%, #f0f4ff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.comparison-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.comparison-section .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.comparison-section h2 {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.comparison-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--gradient);
+    border-radius: 2px;
+}
+
+.comparison-intro {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4b5563;
+}
+
+.comparison-highlight {
+    background: linear-gradient(120deg, rgba(79, 70, 229, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
+    border-left: 4px solid var(--primary-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+    font-weight: 500;
+}
+
+.comparison-table-container {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    margin: 3rem 0;
+    border: 1px solid #e5e7eb;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.comparison-table thead {
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    color: white;
+}
+
+.comparison-table th {
+    padding: 1.25rem 1.5rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.comparison-table th:first-child {
+    border-top-left-radius: 16px;
+}
+
+.comparison-table th:last-child {
+    border-top-right-radius: 16px;
+}
+
+.comparison-table td {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid #f3f4f6;
+    vertical-align: middle;
+}
+
+.comparison-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.comparison-table tbody tr:hover {
+    background-color: #f9fafb;
+}
+
+.feature-name {
+    font-weight: 500;
+    color: #1f2937;
+    white-space: nowrap;
+}
+
+.feature-value {
+    text-align: center;
+    font-weight: 500;
+}
+
+.feature-value.positive {
+    color: #10b981;
+}
+
+.feature-value.negative {
+    color: #ef4444;
+}
+
+.feature-value.warning {
+    color: #f59e0b;
+}
+
+.check-icon, .x-icon, .warning-icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5rem;
+}
+
+.check-icon {
+    background-color: #ecfdf5;
+    color: #10b981;
+}
+
+.x-icon {
+    background-color: #fef2f2;
+    color: #ef4444;
+}
+
+.warning-icon {
+    background-color: #fffbeb;
+    color: #f59e0b;
+}
+
+.comparison-cta {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.comparison-cta h3 {
+    font-size: 1.75rem;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+}
+
+.comparison-cta p {
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    color: #4b5563;
+    line-height: 1.7;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .comparison-section {
+        padding: 5rem 1.5rem;
+    }
+    
+    .comparison-section h2 {
+        font-size: 2.2rem;
+    }
+    
+    .comparison-table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+@media (max-width: 768px) {
+    .comparison-section {
+        padding: 4rem 1.25rem;
+    }
+    
+    .comparison-section h2 {
+        font-size: 2rem;
+    }
+    
+    .comparison-intro {
+        margin-bottom: 2rem;
+        text-align: left;
+    }
+    
+    .comparison-table th, 
+    .comparison-table td {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .feature-name {
+        white-space: normal;
+    }
+}
+
+@media (max-width: 480px) {
+    .comparison-section h2 {
+        font-size: 1.75rem;
+    }
+    
+    .comparison-cta h3 {
+        font-size: 1.5rem;
+    }
+    
+    .comparison-table {
+        font-size: 0.85rem;
+    }
+}
