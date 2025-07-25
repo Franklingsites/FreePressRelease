@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - FreePressRelease</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .login-main {
+            min-height: calc(100vh - 300px);
+            display: flex;
+            align-items: center;
+            padding: 2rem 0;
+            background-color: #f8f9fa;
+        }
+        
+        .login-container {
+            max-width: 500px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 3rem;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            text-align: left;
+        }
+        
+        .login-header {
+            margin-bottom: 2rem;
+        }
+        
+        .login-header h1 {
+            color: #2a69ff;
+            margin-bottom: 0.5rem;
+        }
+        
+        .login-header p {
+            color: #666;
+            margin-bottom: 2rem;
+        }
+        
+        .login-form .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+            width: 100%;
+        }
+        
+        .login-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        
+        .login-form input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #e1e4e8;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background-color: #f8f9fa;
+        }
+        
+        .login-form input:focus {
+            border-color: #2a69ff;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(42, 105, 255, 0.1);
+        }
+        
+        .remember-forgot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .remember-me {
+            display: flex;
+            align-items: center;
+        }
+        
+        .remember-me input {
+            margin-right: 0.5rem;
+            width: auto;
+        }
+        
+        .forgot-password {
+            color: #2a69ff;
+            text-decoration: none;
+        }
+        
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+        
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background: #2a69ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .login-btn:hover {
+            background: #1a59ee;
+        }
+        
+        .divider {
+            margin: 2rem 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .divider::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: #eee;
+            z-index: 1;
+        }
+        
+        .divider span {
+            background: #fff;
+            padding: 0 1rem;
+            position: relative;
+            z-index: 2;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .social-login {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: #fff;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .social-btn:hover {
+            background: #f9f9f9;
+            border-color: #ccc;
+        }
+        
+        .social-btn i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .google-btn i { color: #DB4437; }
+        .facebook-btn i { color: #4267B2; }
+        
+        .signup-link {
+            margin-top: 1.5rem;
+            color: #666;
+        }
+        
+        .signup-link a {
+            color: #2a69ff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 576px) {
+            .login-container {
+                margin: 2rem 1rem;
+                padding: 1.5rem;
+            }
+            
+            .remember-forgot {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">Free<span>Press</span>Release</div>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="index.html#easy-steps">How It Works</a></li>
+                <li><a href="index.html#success-stories">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Login Form -->
+    <main class="login-main">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 2rem 1rem;">
+            <div class="login-container" style="background: #fff; border-radius: 10px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05); padding: 3rem; max-width: 500px; margin: 2rem auto;">
+                <div class="login-header" style="text-align: center; margin-bottom: 2rem;">
+                    <h1 style="color: #2a69ff; font-size: 2rem; margin-bottom: 0.5rem;">Welcome Back</h1>
+                    <p style="color: #666; font-size: 1.1rem;">Sign in to your FreePressRelease account</p>
+                </div>
+            
+            <form class="login-form" id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                
+                <div class="remember-forgot">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">Remember me</label>
+                    </div>
+                    <a href="forgot-password.html" class="forgot-password">Forgot password?</a>
+                </div>
+                
+                <button type="submit" class="login-btn">Sign In</button>
+                
+                <div class="divider">
+                    <span>OR CONTINUE WITH</span>
+                </div>
+                
+                <div class="social-login">
+                    <button type="button" class="social-btn google-btn">
+                        <i class="fab fa-google"></i>
+                        Sign in with Google
+                    </button>
+                    <button type="button" class="social-btn facebook-btn">
+                        <i class="fab fa-facebook-f"></i>
+                        Sign in with Facebook
+                    </button>
+                </div>
+                
+                <p class="signup-link">
+                    Don't have an account? <a href="signup.html">Sign up</a>
+                </p>
+            </form>
+        </div>
+    </main>
+
+
+
+    <script src="js/main.js"></script>
+    <script>
+        // Form submission
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Add your login logic here
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            // Example validation
+            if (email && password) {
+                // Simulate login (replace with actual API call)
+                console.log('Login attempt with:', email);
+                // Redirect to dashboard or show success message
+                // window.location.href = 'dashboard.html';
+            }
+        });
+        
+        // Social login handlers
+        document.querySelector('.google-btn').addEventListener('click', function() {
+            console.log('Google login clicked');
+            // Add Google OAuth logic here
+        });
+        
+        document.querySelector('.facebook-btn').addEventListener('click', function() {
+            console.log('Facebook login clicked');
+            // Add Facebook OAuth logic here
+        });
+    </script>
+</body>
+</html>
