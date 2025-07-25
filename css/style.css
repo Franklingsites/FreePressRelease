@@ -526,9 +526,12 @@ a:hover {
 
 .benefits-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
     gap: 2rem;
-    margin-bottom: 5rem;
+    margin: 3rem auto;
+    max-width: 1400px;
+    grid-auto-flow: column;
 }
 
 .benefit-card {
