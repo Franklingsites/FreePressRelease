@@ -169,9 +169,11 @@ a:hover {
     min-height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 8rem 2rem 4rem;
     position: relative;
     overflow: hidden;
+    text-align: center;
 }
 
 .hero::before {
@@ -186,8 +188,14 @@ a:hover {
 }
 
 .hero-content {
-    max-width: 600px;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1.5rem;
     animation: fadeInUp 1s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .hero h1 {
@@ -196,6 +204,8 @@ a:hover {
     line-height: 1.2;
     position: relative;
     display: inline-block;
+    text-align: center;
+    width: 100%;
 }
 
 .glitch {
@@ -1251,12 +1261,14 @@ a:hover {
     transform: translateY(30px);
     animation: fadeInUp 0.6s forwards;
     overflow: hidden;
+    z-index: 1; /* Ensure cards appear above the connecting line */
 }
 
 .step-card:nth-child(1) { animation-delay: 0.2s; }
 .step-card:nth-child(2) { animation-delay: 0.4s; }
 .step-card:nth-child(3) { animation-delay: 0.6s; }
 
+/* Removed hover effect on step cards to reduce visual noise */
 .step-card::before {
     content: '';
     position: absolute;
@@ -1265,16 +1277,20 @@ a:hover {
     width: 4px;
     height: 0;
     background: var(--gradient);
-    transition: height 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: height 0.3s ease-out;
+    z-index: 2;
 }
 
+/* Simplified hover effect */
 .step-card:hover {
-    transform: translateY(-5px) !important;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px) !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
+/* Show the left border on hover instead of a full height bar */
 .step-card:hover::before {
     height: 100%;
+    opacity: 0.7;
 }
 
 .step-number {
@@ -1342,13 +1358,17 @@ a:hover {
 }
 
 .step-visual {
-    width: 300px;
-    min-width: 300px;
+    width: 100%;
+    max-width: 300px;
+    min-width: 250px;
     margin-left: 1.5rem;
     border-radius: 10px;
-    overflow: hidden;
+    overflow: visible;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Typing Animation */
@@ -1361,14 +1381,23 @@ a:hover {
     font-size: 0.9rem;
     line-height: 1.6;
     position: relative;
-    height: 150px;
-    overflow: hidden;
+    min-height: 150px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .code-line {
     margin-bottom: 0.8rem;
     opacity: 0;
     animation: typeIn 0.4s forwards;
+    width: 100%;
+    box-sizing: border-box;
+    white-space: normal;
+    word-break: break-word;
 }
 
 .code-line:nth-child(1) { animation-delay: 0.3s; }
@@ -1539,16 +1568,16 @@ a:hover {
     box-shadow: 0 8px 20px rgba(67, 97, 238, 0.4);
 }
 
-/* Connecting Line */
+/* Connecting Line - Moved further left and made more subtle */
 .connecting-line {
     position: absolute;
-    left: 30px;
+    left: 20px; /* Moved further left */
     top: 0;
     bottom: 0;
-    width: 4px;
-    background: #e5e7eb;
+    width: 2px; /* Thinner line */
+    background: #f0f2f5; /* Lighter color */
     z-index: -1;
-    margin: 80px 0;
+    margin: 90px 0; /* Adjusted margin */
 }
 
 .connecting-line::after {
@@ -1558,8 +1587,9 @@ a:hover {
     left: 0;
     width: 100%;
     height: 0;
-    background: var(--gradient);
-    transition: height 2s cubic-bezier(0.19, 1, 0.22, 1);
+    background: linear-gradient(to bottom, #e0e7ff, #a5b4fc, #818cf8); /* Subtle gradient */
+    transition: height 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+    opacity: 0.7; /* More subtle appearance */
 }
 
 /* Animate connecting line when scrolled into view */
@@ -1596,6 +1626,7 @@ a:hover {
     .step-card {
         flex-direction: column;
         text-align: center;
+        align-items: center;
     }
     
     .step-number {
@@ -1605,11 +1636,15 @@ a:hover {
     .step-content {
         padding-right: 0;
         margin-bottom: 2rem;
+        width: 100%;
     }
     
     .step-visual {
         width: 100%;
-        margin-left: 0;
+        max-width: 100%;
+        margin: 1.5rem 0 0;
+        display: flex;
+        justify-content: center;
     }
     
     .connecting-line {
@@ -1716,12 +1751,14 @@ a:hover {
     margin: 4rem 0;
     overflow: hidden;
     position: relative;
+    width: 100%;
 }
 
 .carousel-track {
     display: flex;
-    animation: scroll 30s linear infinite;
-    width: calc(250px * 8); /* Width of one item * number of items */
+    animation: scroll 40s linear infinite;
+    width: calc(250px * 10); /* Width of one item * number of items */
+    will-change: transform;
 }
 
 @keyframes scroll {
@@ -1729,12 +1766,12 @@ a:hover {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(calc(-250px * 4)); /* Move by half the width */
+        transform: translateX(calc(-250px * 5)); /* Move by half the width */
     }
 }
 
 .partner-logo {
-    width: 250px;
+    flex: 0 0 250px;
     height: 120px;
     margin: 0 15px;
     display: flex;
@@ -1744,8 +1781,8 @@ a:hover {
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     padding: 1.5rem;
-    position: relative; /* Added for badge positioning */
     transition: all 0.3s ease;
+    position: relative;
 }
 
 .partner-logo:hover {
@@ -1765,20 +1802,11 @@ a:hover {
     font-family: 'Poppins', sans-serif;
 }
 
-/* ===== Added for Premium "Paid" Badge ===== */
-.premium-badge {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    background: #ff4d4f;
-    color: #fff;
-    font-size: 11px;
-    font-weight: 600;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-family: 'Poppins', sans-serif;
-    pointer-events: none;
-    z-index: 1;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .carousel-track {
+        animation-duration: 30s; /* Slower on mobile for better readability */
+    }
 }
 
 
@@ -2118,18 +2146,27 @@ textarea.form-control {
 }
 
 .template-actions .btn {
-    flex: 1;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
-    padding: 0.8rem 1.5rem;
-    border-radius: 8px;
-    font-weight: 500;
-    transition: all 0.2s ease;
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: center;
+    white-space: normal;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    position: relative;
+    overflow: visible;
+    z-index: 1;
+    word-break: break-word;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
-/* Template Tips */
 .template-tips {
     background: white;
     border-radius: 12px;

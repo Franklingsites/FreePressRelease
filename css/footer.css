@@ -187,3 +187,28 @@
         font-size: 0.85rem;
     }
 }
+/* Add these styles to your existing footer styles */
+.contact-column {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.social-icons {
+    justify-content: flex-end;
+    margin-left: auto;
+}
+
+/* Adjust the logo column to take more space */
+.logo-column {
+    flex: 2;
+    max-width: 500px;
+}
+
+/* Ensure social icons stay in one line */
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: nowrap;
+}
