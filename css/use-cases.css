@@ -300,4 +300,27 @@
         width: 100%;
         justify-content: center;
     }
+    
+    .use-case-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .use-cases {
+        padding: 3rem 1.5rem;
+    }
+
+    .use-case-card {
+        padding: 1.5rem;
+    }
+
+    .use-case-icon {
+        font-size: 2rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .use-case-card h3 {
+        font-size: 1.25rem;
+    }
 }

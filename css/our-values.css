@@ -7,15 +7,13 @@
 }
 
 .our-values .container {
-    max-width: 1400px; /* Increased from 1200px */
+    max-width: 1400px;
     margin: 0 auto;
-    min-width: 1200px; /* Increased from 1000px to fit 4 cards */
 }
 
 .our-values .section-header {
     text-align: center;
     margin-bottom: 3rem;
-    min-width: 1200px; /* Increased to match container */
 }
 
 .our-values h2 {
@@ -34,26 +32,24 @@
     max-width: 800px;
 }
 
-/* Values Grid Layout - Always in one row */
 .values-grid {
     display: flex;
-    gap: 1.5rem; /* Slightly reduced gap to fit 4 cards */
+    gap: 1.5rem;
     margin-top: 2rem;
-    min-width: 100%;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 /* Individual Value Card */
 .value-card {
     background: white;
     border-radius: 12px;
-    padding: 2rem 1.5rem; /* Slightly reduced horizontal padding */
+    padding: 2rem 1.5rem;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid #e5e7eb;
-    flex: 1;
-    min-width: 250px; /* Slightly reduced from 300px to fit 4 cards */
-    max-width: 280px; /* Added max-width for better proportions */
+    flex: 1 1 250px;
+    max-width: 280px;
 }
 
 .value-card:hover {
@@ -105,4 +101,23 @@
 
 .our-values::-webkit-scrollbar-thumb:hover {
     background: #555;
+}
+
+@media (max-width: 768px) {
+    .our-values {
+        padding: 3rem 1rem;
+    }
+
+    .our-values h2 {
+        font-size: 1.8rem;
+    }
+
+    .our-values .tagline {
+        font-size: 1rem;
+    }
+
+    .value-card {
+        flex-basis: 100%;
+        max-width: none;
+    }
 }
