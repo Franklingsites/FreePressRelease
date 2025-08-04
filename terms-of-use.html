@@ -6,6 +6,7 @@
     <title>Terms of Use - FreePressRelease.io</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/policy.css">
+    <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -13,13 +14,14 @@
     <!-- Header -->
     <header class="header">
         <nav class="navbar">
-            <div class="logo">Free<span>Press</span>Release</div>
+            <div class="logo"><a href="index.html" style="color: inherit; text-decoration: none;">Free <span>Press </span>Release</a></div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#features">Features</a></li>
                 <li><a href="index.html#easy-steps">How It Works</a></li>
                 <li><a href="index.html#success-stories">Testimonials</a></li>
                 <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html" class="login-btn-header">Login</a></li>
             </ul>
             <div class="hamburger">
                 <div class="line"></div>
@@ -147,36 +149,50 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>FreePressRelease</h3>
-                <p>Your trusted partner for press release distribution. Reach your target audience effectively.</p>
+    <footer class="site-footer">
+        <!-- First Row -->
+        <div class="footer-row first-row">
+            <!-- Left Column: Logo and Description -->
+            <div class="footer-column logo-column">
+                <div class="footer-logo" style="font-size: 1.8rem; font-weight: 700; margin-bottom: 1rem;">
+                    <a href="index.html" style="color: inherit; text-decoration: none;">Free <span>Press </span>Release</a>
+                </div>
+                <p class="footer-description">Your trusted partner for press release distribution. Reach your target audience effectively.</p>
+                <a href="https://my.freepressrelease.io/" target="_blank" class="btn btn-primary footer-login-btn">Login to Dashboard</a>
             </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="http://freepressrelease.io/" target="_blank">Free Press Release Template</a></li>
+            
+            <!-- Right Column: Contact Info and Social Icons -->
+            <div class="footer-column contact-column">
+                <h3 class="footer-heading">Contact Us</h3>
+                <a href="mailto:info@freepressrelease.io" class="footer-email">info@freepressrelease.io</a>
+                <div class="social-icons">
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Second Row: Quick Links and Copyright -->
+        <div class="footer-row second-row">
+            <div class="quick-links">
+                <h3 class="footer-heading">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="http://freepressrelease.io/">Free Press Release</a></li>
                     <li><a href="index.html#faq">FAQs</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
                     <li><a href="privacy-policy.html">Privacy Policy</a></li>
                     <li><a href="terms-of-use.html">Terms of Use</a></li>
                 </ul>
             </div>
-            <div class="footer-section">
-                <h3>Contact Us</h3>
-                <p><i class="fas fa-envelope"></i> <a href="mailto:info@freepressrelease.io">info@freepressrelease.io</a></p>
-                <p><i class="fas fa-phone"></i> <a href="tel:+1234567890">(123) 456-7890</a></p>
-                <div class="social-links">
-                    <a href="https://facebook.com/freepressrelease" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://twitter.com/freepressrelease" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="https://linkedin.com/company/freepressrelease" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://instagram.com/freepressrelease" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                </div>
+            <div class="copyright">
+                <p> 2025 Free Press Release. All rights reserved.</p>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 FreePressRelease. All rights reserved.</p>
         </div>
     </footer>
 
