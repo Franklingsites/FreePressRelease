@@ -150,6 +150,8 @@
     background-color: #f9fafb;
 }
 
+
+
 .feature-name {
     font-weight: 500;
     color: #1f2937;
@@ -284,7 +286,6 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-fill-color: transparent;
 }
 
 .comparison-cta .cta-subtext {
@@ -327,6 +328,53 @@
 }
 
 @media (max-width: 768px) {
+    .comparison-header {
+        display: none; /* Hide header on mobile */
+    }
+
+    .comparison-row {
+        display: block;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+    }
+
+    .comparison-row .feature,
+    .comparison-row .us,
+    .comparison-row .others {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.75rem 0.5rem;
+        border-bottom: 1px solid #f3f4f6;
+        text-align: right;
+    }
+
+    .comparison-row .feature {
+        font-weight: 600;
+        color: #1a1a1a;
+        background-color: #f9fafb;
+        border-radius: 6px 6px 0 0;
+        border-bottom: 2px solid #e5e7eb;
+    }
+
+    .comparison-row .us:before,
+    .comparison-row .others:before {
+        font-weight: 600;
+        color: #374151;
+        text-align: left;
+        content: 'FreePressRelease.io:';
+    }
+
+    .comparison-row .others:before {
+        content: 'Other Sites:';
+    }
+
+    .comparison-row > div:last-child {
+        border-bottom: none;
+    }
+
     .comparison-section {
         padding: 4rem 1.25rem;
     }

@@ -98,6 +98,65 @@
     opacity: 1;
 }
 
+/* Simple Use Case List Section */
+.use-case-list {
+    max-width: 100%;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+.use-case-list h3 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: #1a1a1a;
+}
+
+.use-case-list-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 2rem auto;
+}
+
+.use-case-item {
+    flex: 1 1 250px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f8f9ff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.use-case-item:hover {
+    transform: translateY(-3px);
+}
+
+.use-case-item i {
+    color: #2a69ff;
+    font-size: 1.2rem;
+}
+
+/* Responsive Styles for Simple List */
+@media (max-width: 768px) {
+    .use-case-list {
+        padding: 0 1rem;
+    }
+
+    .use-case-list h3 {
+        font-size: 1.5rem;
+    }
+
+    .use-case-item {
+        flex-basis: 100%;
+    }
+}
+
 .card-icon {
     width: 60px;
     height: 60px;
