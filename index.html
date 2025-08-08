@@ -1124,7 +1124,91 @@
                 <p class="tagline" style="font-size: 1.2rem; color: #555; max-width: 700px; margin: 0 auto;">Discover how different professionals and businesses leverage our free press release service to achieve their goals</p>
             </div>
             
-            <div class="use-cases-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+            <style>
+                .use-cases-grid {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    gap: 2rem;
+                    margin-top: 3rem;
+                }
+                @media (min-width: 768px) {
+                    .use-cases-grid {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                }
+                .use-case-card {
+                    display: flex;
+                    flex-direction: column;
+                    height: 100%;
+                    background: white;
+                    border-radius: 12px;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+                    border: 1px solid #e2e8f0;
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                    overflow: hidden;
+                }
+                .use-case-card:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                }
+                .card-header {
+                    padding: 1.5rem;
+                    background: #f8f9ff;
+                    border-bottom: 1px solid #e2e8f0;
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                }
+                .card-icon {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    background: #F2F2F2;
+                    color: #2a69ff;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 1.2rem;
+                    transition: all 0.3s ease;
+                }
+                .use-case-card:hover .card-icon {
+                    background: #2a69ff;
+                    color: white;
+                    transform: scale(1.1);
+                }
+                .card-header h3 {
+                    margin: 0;
+                    font-size: 1.2rem;
+                    color: #1a1a1a;
+                }
+                .card-body {
+                    padding: 1.5rem;
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                }
+                .card-body p {
+                    margin: 0 0 1rem 0;
+                    color: #4b5563;
+                    line-height: 1.6;
+                    flex-grow: 1;
+                }
+                .card-tags {
+                    display: flex;
+                    gap: 0.5rem;
+                    margin-top: 1rem;
+                }
+                .tag {
+                    background: #f0f4ff;
+                    color: #2a69ff;
+                    padding: 0.25rem 0.75rem;
+                    border-radius: 50px;
+                    font-size: 0.8rem;
+                    font-weight: 500;
+                }
+            </style>
+            <div class="use-cases-grid">
+                <!-- Row 1 -->
                 <!-- Use Case 1: Startups -->
                 <div class="use-case-card">
                     <div class="card-header">
@@ -1159,6 +1243,7 @@
                     </div>
                 </div>
 
+                <!-- Row 2 -->
                 <!-- Use Case 3: E-commerce -->
                 <div class="use-case-card">
                     <div class="card-header">
@@ -1193,6 +1278,7 @@
                     </div>
                 </div>
 
+                <!-- Row 3 -->
                 <!-- Use Case 5: Bloggers -->
                 <div class="use-case-card">
                     <div class="card-header">
@@ -1227,6 +1313,7 @@
                     </div>
                 </div>
 
+                <!-- Row 4 -->
                 <!-- Use Case 7: Nonprofits -->
                 <div class="use-case-card">
                     <div class="card-header">
@@ -1261,19 +1348,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- CTA Box -->
-            <div class="cta-box" style="background: linear-gradient(135deg, #2a69ff 0%, #6c5ce7 100%); color: white; border-radius: 12px; padding: 3rem; margin-top: 4rem; text-align: center; position: relative; overflow: hidden;">
-                <div style="position: relative; z-index: 2;">
-                    <h3 style="font-size: 2rem; margin: 0 0 1rem 0;">Ready to Share Your Story?</h3>
-                    <p style="font-size: 1.1rem; max-width: 700px; margin: 0 auto 2rem; opacity: 0.9;">Join thousands of businesses and individuals who trust Free Press Release for their media outreach.</p>
-                    <a href="https://my.freepressrelease.io" target="_blank" class="cta-button" style="display: inline-block; background: white; color: #2a69ff; padding: 0.8rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                        Submit Your Free Press Release
-                    </a>
-                </div>
-                <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: rgba(255,255,255,0.1); border-radius: 50%;"></div>
-                <div style="position: absolute; bottom: -80px; left: -30px; width: 200px; height: 200px; background: rgba(255,255,255,0.1); border-radius: 50%;"></div>
-            </div>
         </div>
     </section>
 
@@ -1292,7 +1366,18 @@
                     You deserve a platform that respects your time and trust.
                 </div>
             </div>
-            
+        <!-- CTA Box -->
+        <div class="cta-box" style="background: linear-gradient(135deg, #2a69ff 0%, #6c5ce7 100%); color: white; border-radius: 12px; padding: 3rem; margin-top: 4rem; text-align: center; position: relative; overflow: hidden;">
+            <div style="position: relative; z-index: 2;">
+                <h3 style="font-size: 2rem; margin: 0 0 1rem 0;">Ready to Share Your Story?</h3>
+                <p style="font-size: 1.1rem; max-width: 700px; margin: 0 auto 2rem; opacity: 0.9;">Join thousands of businesses and individuals who trust Free Press Release for their media outreach.</p>
+                <a href="https://my.freepressrelease.io" target="_blank" class="cta-button" style="display: inline-block; background: white; color: #2a69ff; padding: 0.8rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    Submit Your Free Press Release
+                </a>
+            </div>
+            <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: rgba(255,255,255,0.1); border-radius: 50%;"></div>
+            <div style="position: absolute; bottom: -80px; left: -30px; width: 200px; height: 200px; background: rgba(255,255,255,0.1); border-radius: 50%;"></div>
+        </div>
             <div class="comparison-cta">
                 <div class="cta-content">
                     <div class="cta-tagline">
